@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="De La Salle Frères Amman - Excellence in Catholic education for over three centuries. Providing holistic education rooted in Lasallian values in the heart of Jordan." />
+    <meta name="keywords" content="De La Salle, Catholic school, Amman, Jordan, Lasallian education, international school, Christian education" />
+    <meta property="og:title" content="De La Salle Frères - Catholic School in Amman, Jordan" />
+    <meta property="og:description" content="Excellence in Catholic education for over three centuries. Join our vibrant community of learners in Amman, Jordan." />
+    <meta property="og:type" content="website" />
+    <title>De La Salle Frères - Catholic School in Amman, Jordan</title>
+    <style>
+      /* Smooth scroll behavior */
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      /* Loading animation */
+      .loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #1e40af;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease;
+      }
+      
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid #3b82f6;
+        border-top: 3px solid #f59e0b;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div id="loading" class="loading">
+      <div class="loading-spinner"></div>
+    </div>
+    
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <script>
+      // Hide loading screen once page is loaded
+      window.addEventListener('load', () => {
+        const loading = document.getElementById('loading');
+        if (loading) {
+          loading.style.opacity = '0';
+          setTimeout(() => {
+            loading.style.display = 'none';
+          }, 500);
+        }
+      });
+    </script>
+  </body>
+</html>
